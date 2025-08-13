@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS Ticker - Live Sports Scores</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+<body style="margin:0;padding:0;overflow:hidden;background:#222;">
+    <div id="ticker-container" class="w-full bg-gray-800 overflow-hidden flex items-center relative" style="height:100vh;min-height:48px;">
+        <button id="close-btn" style="position:absolute;top:6px;right:12px;display:none;background:transparent;border:none;color:#fff;font-size:1.5rem;cursor:pointer;z-index:10;">&times;</button>
+        <span id="ticker" class="whitespace-nowrap py-4 text-lg text-white block ml-4" style="will-change:transform; display:inline-block;">
+            Loading live scores...
+        </span>
+    </div>
+    <script>
+    // Show/hide close button on hover
+    const tickerContainer = document.getElementById('ticker-container');
+    const closeBtn = document.getElementById('close-btn');
+    tickerContainer.addEventListener('mouseenter', () => { closeBtn.style.display = 'block'; });
+    tickerContainer.addEventListener('mouseleave', () => { closeBtn.style.display = 'none'; });
+    closeBtn.addEventListener('click', () => { window.close(); });
+    </script>
+</body>
+    <script src="app.js"></script>
+</body>
+</html>
